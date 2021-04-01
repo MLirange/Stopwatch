@@ -16,8 +16,14 @@ btnStart.onclick = timer;
 btnStop.onclick = stop;
 btnReset.onclick = reset;
 
+btnStop.disabled = true;
+
 function timer() {
     if (!stopped) {
+        btnStart.disabled = true;
+        btnStop.disabled = false;
+        btnReset.disabled = true;
+
         seconds++;
 
         if (seconds > 59) {
@@ -44,10 +50,15 @@ function timer() {
 }
 
 function stop() {
+    btnStop.disabled = true;
+    btnStart.disabled = false;
+    btnReset.disabled = false;
     stopped = true;
 }
 
 function reset() {
+    btnStop.disabled = true;
+    btnStart.disabled = false;
     stopped = false;
     minutes = 0;
     seconds = 0;
