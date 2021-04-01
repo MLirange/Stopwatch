@@ -18,6 +18,8 @@ btnReset.onclick = reset;
 
 btnStop.disabled = true;
 
+body.style.minHeight = `${window.innerHeight}px`;
+
 function timer() {
     if (!stopped) {
         btnStart.disabled = true;
